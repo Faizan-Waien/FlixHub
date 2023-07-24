@@ -1,0 +1,245 @@
+.parent {
+    display: flex;
+    flex-direction: column;
+    padding-top: 120px;
+    margin-bottom: 50px;
+}
+
+.parent h1 {
+    margin: 0px 20px;
+    font-weight: lighter;
+}
+
+.ttl {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.bt {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(115, 16, 16);
+    opacity: 50%;
+    border: transparent;
+    border-radius: 20px;
+    /* font-size: large; */
+    margin-right: 10px;
+    padding: 0px 10px;
+    transition: 0.5s;
+}
+
+.bt:hover {
+    opacity: 100%;
+}
+
+.main2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    background-color: rgba(62, 55, 55, 0.323);
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    height: fit-content;
+    min-height: 500px;
+    width: 100%;
+    padding: 20px;
+}
+
+.child {
+    margin: 10px 20px
+}
+
+.child button {
+    width: 220px;
+    height: 25px;
+    background-color: rgb(115, 16, 16);
+    opacity: 50%;
+    border: transparent;
+    transition: 0.5s;
+}
+
+.child button:hover {
+    opacity: 100%;
+}
+
+.sub2 {
+    display: flex;
+    cursor: pointer;
+    overflow: hidden;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.sub2 .detl {
+    display: none;
+}
+
+.sub2:hover {
+    transform: scale(1.01)
+}
+
+.sub2:hover .poster {
+    display: none;
+}
+
+.sub2:hover .detl {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    height: 320px;
+    text-align: center;
+    padding: 5px;
+    background-color: rgba(186, 24, 24, 0.232);
+}
+
+.detl h5 {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    align-items: center;
+    gap: 5px;
+    margin: 0px;
+    padding: 5px;
+}
+
+.detl h3 {
+    font-weight: 700;
+    margin: 0px;
+    background-color: rgb(216, 209, 209);
+    color: black;
+}
+
+.detl p {
+    font-size: x-small;
+    margin: 10px 5px;
+    text-align: left;
+}
+
+.counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.counter .c-btn {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(54, 49, 49);
+    opacity: 0.6;
+    color: rgb(172, 163, 163);
+    cursor: pointer;
+    border: transparent;
+    border-radius: 20%;
+    transition: 0.5s;
+}
+
+.counter .c-btn:hover {
+    opacity: 100%;
+}
+
+.chip {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    padding: 10px;
+    border-top: 2px solid grey;
+}
+
+.dropdown {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: absolute;
+    right: 10px;
+}
+
+.plholder input {
+    width: 100px;
+    height: 25px;
+    padding: 5px;
+    background-color: rgb(20, 17, 17);
+    color: rgb(195, 184, 184);
+    opacity: 0.6;
+    border: 1px solid rgb(69, 66, 66);
+    cursor: pointer;
+}
+
+.dropdown .sort {
+    display: none;
+    border: 1px solid rgb(41, 39, 39);
+    width: 100px;
+    padding: 5px;
+    cursor: pointer;
+    background-color: rgb(42, 38, 38);
+    color: white;
+    text-align: center;
+    font-size: small;
+    z-index: 999;
+}
+
+.dropdown:hover .sort {
+    display: flex;
+}
+
+.dropdown .sort:hover {
+    background: gray;
+}
+
+/* --SETTINGS----------------------------------- */
+
+.settingscont {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 30px 0px;
+    background-color: rgba(62, 55, 55, 0.323);
+    border-top: 2px solid grey;
+    border-bottom: 2px solid grey;
+    height: fit-content;
+    width: 100%;
+}
+
+.settingscont h2 {
+    font-weight: lighter;
+    border-bottom: 1px solid white;
+    width: fit-content;
+    margin: 0px 20px;
+}
+
+.sc1 {
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    margin: 20px;
+    align-items: center;
+    color: black;
+    background-color: #eee3e3ec;
+    box-shadow: black 0px 0px 10px 0px;
+}
+
+.sc1 h4 {
+    background: rgb(185, 130, 130);
+    margin: 0;
+    padding: 10px;
+    width: 92%;
+}
+
+.sc1 .sca {
+    display: block;
+    padding: 10px 10px;
+}
+
+.sc1 input {
+    padding: 10px;
+    width: 200px;
+    background: white;
+    color: black;
+}

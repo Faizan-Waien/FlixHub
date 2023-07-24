@@ -1,0 +1,198 @@
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
+.scrolled {
+    background-color: rgba(0, 0, 0, 0.773);
+}
+
+.container {
+    display: flex;
+    padding: 30px 20px;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.left .logodiv {
+    display: block;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.left img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.right img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.right .btn-flix {
+    background-color: rgb(222, 23, 23);
+    border-radius: 5px;
+    border-color: transparent;
+    width: 80px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    font-size: medium;
+    transition: 0.5s;
+}
+
+.right .btn-flix:hover {
+    background-color: rgb(128, 20, 20);
+}
+
+.profile {
+    display: flex;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    background-color: #eee3e3ec;
+    box-shadow: black 0px 0px 10px 0px;
+    width: 100px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+
+.options .txt {
+    padding: 10px 10px;
+    transition: 0.5s;
+    font-size: small;
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px solid grey;
+}
+
+.options .txt:hover {
+    background: #a74a4a;
+}
+
+.options .switch {
+    display: inline-flex;
+    align-items: center;
+    background: rgb(36, 35, 35);
+    padding: 0px 10px;
+    font-size: small;
+    color: white;
+}
+
+/* ---------------------------------------- */
+
+.ser .frm {
+    display: flex;
+    align-items: center;
+}
+
+.frm .btn-nav {
+    cursor: pointer;
+    background-color: #a74a4a;
+    border-color: transparent;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 3px;
+    transition: 0.5s;
+}
+
+.frm .btn-nav:hover {
+    background-color: #d48f8f;
+}
+
+.frm input {
+    background-color: rgba(252, 249, 249, 0.762);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: transparent;
+    padding: 10px;
+    color: black;
+    width: 100%;
+}
+
+.dd:hover {
+    background-color: rgba(83, 30, 30, 0.641);
+    cursor: pointer;
+}
+
+.map {
+    background-color: rgba(20, 17, 17, 0.926);
+    width: 60%;
+    max-height: 280px;
+    position: absolute;
+    top: 37px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+
+.watchBtn {
+    color: white;
+    transition: 0.5s;
+}
+
+.watchBtn:hover {
+    color: #a74a4a;
+}
+
+.d2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: small;
+}
+
+@media screen and (max-width: 700px) {
+
+    .left .logodiv {
+        width: 120px;
+    }
+
+    .container {
+        padding: 10px 20px;
+    }
+
+    .right .btn-flix {
+        width: 60px;
+        height: 20px;
+        font-size: small;
+    }
+
+    .right img {
+        width: 20px;
+    }
+
+    .frm .btn-nav {
+        height: 30px;
+    }
+
+    .frm input {
+        height: 10px;
+
+    }
+}

@@ -1,0 +1,90 @@
+.bg {
+    display: flex;
+    background-image: url(/src/assets/bg.jpg);
+    width: 100vw;
+    height: 100vh;
+}
+
+.blck {
+    display: flex;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5));
+    width: 100vw;
+    height: 100vh;
+}
+
+.center {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 65%;
+    min-width: 300px;
+}
+
+.center h1 {
+    font-size: 50px;
+    color: white;
+}
+
+.center p {
+    font-size: 25px;
+    color: white;
+}
+
+.center input {
+    width: 100%;
+    height: 65px;
+    background-color: rgba(0, 0, 0, 0.336);
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding-left: 20px;
+    font-size: larger;
+}
+
+.center button {
+    background-color: rgb(222, 23, 23);
+    height: 70px;
+    width: 250px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+    border-color: grey;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.center button:hover {
+    background-color: rgb(128, 20, 20);
+}
+
+.error {
+    color: white;
+    background-color: rgba(255, 0, 0, 0.407);
+    font-weight: 700;
+    padding: 5px;
+}
+
+.show {
+    display: block;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+}
+
+.not {
+    display: none;
+}
+
+@media screen and (max-width: 700px) {
+
+    .show {
+        flex-direction: column;
+    }
+
+    .center h1 {
+        font-size: 30px;
+    }
+    
+    .center p {
+        font-size: 15px;
+    }
+}

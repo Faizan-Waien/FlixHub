@@ -1,0 +1,42 @@
+    .footer {
+        background: rgb(0, 0, 0);
+        padding: 40px 0px;
+        text-align: center;
+    }
+
+    .footer .row {
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-size: 0.8em;
+        margin: auto;
+        width: fit-content;
+    }
+
+    .row a {
+        text-decoration: none;
+        color: gray;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+
+    .row a:hover {
+        color: #fff;
+    }
+
+    .row ul {
+        padding-inline-start: 0px;
+    }
+
+    .row ul li {
+        display: inline-block;
+        margin: 0px 30px;
+    }
+
+    @media screen and (max-width: 700px) {
+
+        .row ul li {
+            display: block;
+        }
+
+    }

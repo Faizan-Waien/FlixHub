@@ -1,0 +1,101 @@
+.main{
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth; 
+    margin: 0px 50px;
+    /* padding: 0px 25px; */
+}
+
+.sub{
+    margin: 30px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    transition:0.5s;
+}
+
+.sub .poster_img{
+    width: 180px;
+    height: 250px;
+}
+
+.sub .backdrop_img {
+    display: none;
+}
+
+.sub .details{
+    display: none;
+}
+
+.sub:hover{
+    transform: scale(1.1);
+}
+
+.sub:hover .poster_img {
+    display: none;
+}
+
+.sub:hover .backdrop_img {
+    display: block;
+    width: auto;
+    height: 150px;
+    object-fit: contain;
+}
+
+.sub:hover .details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 5px;
+    width: 257px;
+    height: 110px;
+    overflow: hidden;
+    background-color: rgba(186, 24, 24, 0.232);
+}
+
+.details h5{
+    border: 2px solid white;
+    background-color: rgb(178, 35, 35);
+    color: white;
+    width: fit-content;
+    margin: 0px;
+    padding: 5px;
+    position: absolute;
+    top: 0;
+}
+
+.details h3{
+    font-weight: 700;
+    margin: 0px;
+    color: rgb(178, 35, 35);
+}
+
+.details p{
+    font-size: x-small;
+    margin: 5px;
+    text-align: left;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.slBtn{
+    position: absolute;
+    height: 250px;
+    padding: 20px;
+    background-color: transparent;
+    color: grey;
+    border-color: transparent ; 
+    cursor: pointer;
+}
+
+.slBtn:hover{
+    color: rgb(61, 58, 58);
+}
+
+.title{
+    margin: 0px 80px;
+    font-weight: 100;
+}
