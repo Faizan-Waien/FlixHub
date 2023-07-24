@@ -26,7 +26,7 @@ const Signin = () => {
     }
 
     const Nav = () => {
-        if (user.email === 'admin' && user.password === '123') {
+        if (user.email === 'admin@gmail.com' && user.password === '123') {
             navigate('/home')
         } else {
             setError('Incorrect Information')
@@ -46,8 +46,8 @@ const Signin = () => {
 
             <form className='log' onSubmit={Submit}>
 
-                <input type='text' placeholder='Email or phone number' value={user.email} name='email' id='email' onChange={hanleInputs} required />
-                <input type='password' placeholder='Password' value={user.password} name='password' id='password' onChange={hanleInputs} required />
+                <input type='text' placeholder='is: admin@gmail.com' value={user.email} name='email' id='email' onChange={hanleInputs} required />
+                <input type='password' placeholder='is: 123' value={user.password} name='password' id='password' onChange={hanleInputs} required />
                 {error && <span>{error}</span>}
                 <button type='submit' onClick={Nav}>Sign In</button>
 
