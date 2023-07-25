@@ -5,7 +5,7 @@ import Signin from './Signin'
 const Flix = () => {
 
   // const emailRef = useRef()
-  const [user, setUser] = useState({
+  const [users, setUsers] = useState({
     email: '',
     password: '',
   })
@@ -15,20 +15,20 @@ const Flix = () => {
   const [message, setMessage] = useState('')
   const [toggle, setToggle] = useState(true)
 
-  console.log(user.email)
-  console.log(user.password)
+  console.log(users.email)
+  console.log(users.password)
 
   const handleInput = (e) => {
     const name = (e.target.name)
     const value = (e.target.value)
 
-    setUser({ ...user, [name]: value })
+    setUsers({ ...users, [name]: value })
   }
 
   // const Submit = (e) => {
   //   e.preventDefault()
 
-  //   // setUser({
+  //   // setUsers({
   //   //   email: '',
   //   //   password: '',
   //   // })
@@ -36,15 +36,15 @@ const Flix = () => {
 
   const Submit = (e) => {
     e.preventDefault()
-    if (user.email && user.password) {
+    if (users.email && users.password) {
 
       setToggle(!toggle)
-      setMessage('Verification Email have been sent to your email address. Verify and Sign In')
+      setMessage('Registered Sucessfully! You can now signIn')
 
-      setUser({
-        email: '',
-        password: '',
-      })
+      // setUsers({
+      //   email: '',
+      //   password: '',
+      // })
 
       setTimeout(() => {
         setMessage('')
@@ -60,7 +60,7 @@ const Flix = () => {
   }
 
   const ToggleBtn = () => {
-    if (user.email) {
+    if (users.email) {
       setToggle(!toggle)
     } else {
       setMessage('Enter your Email Address')
@@ -84,12 +84,12 @@ const Flix = () => {
           <form onSubmit={Submit}>
 
             <div className={toggle ? "show" : "not"}>
-              <input placeholder='Email Address' name='email' id='email' type='text' value={user.email} onChange={handleInput} />
+              <input placeholder='Email Address' name='email' type='text' value={users.email} onChange={handleInput} />
               <button type='button' onClick={ToggleBtn}>Get Started</button>
             </div>
 
             <div className={!toggle ? "show" : "not"}>
-              <input placeholder='Create Password' name='password' id='password' type='password' value={user.password} onChange={handleInput} />
+              <input placeholder='Create Password' name='password' type='password' value={users.password} onChange={handleInput} />
               <button type='submit'>Sign Up</button>
             </div>
 
@@ -100,7 +100,7 @@ const Flix = () => {
         </div>
 
         <div id='sin' style={{display:'none',margin:'auto'}}>
-          <Signin />
+          <Signin users={users}/>
         </div>
 
       </div>

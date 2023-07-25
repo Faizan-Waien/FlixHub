@@ -10,6 +10,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { FavContext } from "./FavContext";
 import { useContext } from "react";
+import poster1 from '/src/assets/card.jpg'
+import poster2 from '/src/assets/card2.jpg'
+import profilepic from '/src/assets/OIP.jpg'
 
 function MovDetail() {
 
@@ -95,7 +98,7 @@ function MovDetail() {
 
           <div className="info1">
 
-            <div className="imge"> <img src={info.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${info.poster_path}`} /> </div>
+            <div className="imge"> <img src={info.poster_path === null ? poster1 : `https://www.themoviedb.org/t/p/w220_and_h330_face/${info.poster_path}`} /> </div>
 
             <div className="det">
 
@@ -170,14 +173,14 @@ function MovDetail() {
             <div className="ss">
               {similar.slice(0,4).map((s, ind) => {
                 return (
-                  <div className="child" key={ind}>
+                  <div className="child" style={{margin: '10px 5px'}} key={ind}>
 
                     <div className="sub2" onClick={() => navigate(`/movie/${s.id}`)}>
 
-                      <img className="poster" style={{ width: 220 }} src={s.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${s.poster_path}`} />
+                      <img className="poster" style={{ width: 220 }} src={s.poster_path === null ? poster1 : `https://www.themoviedb.org/t/p/w220_and_h330_face/${s.poster_path}`} />
 
                       <div className="detl">
-                        <img className="backdrop" style={{ width: 220 }} src={s.backdrop_path === null ? '/src/assets/card2.jpg' : `https://www.themoviedb.org/t/p/w500/${s?.backdrop_path}`} />
+                        <img className="backdrop" style={{ width: 220 }} src={s.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${s?.backdrop_path}`} />
                         <h5><StarIcon style={{ width: 15 }} />{s.vote_average}</h5>
                         <h3>{s.title || s.name}</h3>
                         <p>{s.overview.substring(0, 250) + " ..... Read More"}</p>
@@ -203,7 +206,7 @@ function MovDetail() {
               return (
                 <div className="subcast" key={ind}>
                   <div className="im">
-                    <img src={c.profile_path === null ? '/src/assets/OIP.jpg' : `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${c.profile_path}`} /></div>
+                    <img src={c.profile_path === null ? profilepic : `https://www.themoviedb.org/t/p/w300_and_h450_bestv2/${c.profile_path}`} /></div>
                   <p>{c.name}</p>
                   <span>({c.character})</span>
                 </div>

@@ -9,6 +9,8 @@ import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrow
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import { Chip } from "@mui/material";
 import useGenre from "./useGenre";
+import poster1 from '/src/assets/card.jpg'
+import poster2 from '/src/assets/card2.jpg'
 
 const list = [
     {
@@ -148,10 +150,10 @@ const Movies = () => {
 
                             <div className="sub2" onClick={() => navigate(`/movie/${item.id}`)}>
 
-                                <img className="poster" src={item.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`} />
+                                <img className="poster" src={item.poster_path === null ? poster1 : `https://www.themoviedb.org/t/p/w220_and_h330_face/${item.poster_path}`} />
 
                                 <div className="detl">
-                                    <img className="backdrop" src={item.backdrop_path === null ? '/src/assets/card2.jpg' : `https://www.themoviedb.org/t/p/w500/${item?.backdrop_path}`} />
+                                    <img className="backdrop" src={item.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${item?.backdrop_path}`} />
                                     <h5><StarIcon style={{ width: 15 }} />{item.vote_average}</h5>
                                     <h3>{item.title || item.name}</h3>
                                     <p>{item.overview.substring(0, 250)+ " ..... Read More"}</p>

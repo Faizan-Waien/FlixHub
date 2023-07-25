@@ -1,7 +1,9 @@
 import { useContext } from "react"
 import { FavContext } from "./FavContext"
 import './CSS Files/Movies.css'
-import StarIcon from '@mui/icons-material/Star';
+import StarIcon from '@mui/icons-material/Star'
+import poster1 from '/src/assets/card.jpg'
+import poster2 from '/src/assets/card2.jpg'
 
 const Favorites = () => {
 
@@ -25,10 +27,10 @@ const Favorites = () => {
 
               <div className="sub2" onClick={() => navigate(`movie/${items.id}`)}>
 
-                <img className="poster" src={items.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items.poster_path}`} />
+                <img className="poster" src={items.poster_path === null ? poster1 : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items.poster_path}`} />
 
                 <div className="detl">
-                  <img className="backdrop" src={items.backdrop_path === null ? '/src/assets/card2.jpg' : `https://www.themoviedb.org/t/p/w500/${items?.backdrop_path}`} />
+                  <img className="backdrop" src={items.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${items?.backdrop_path}`} />
                   <h5><StarIcon style={{ width: 15 }} />{items.vote_average}</h5>
                   <h3>{items.title || items.name}</h3>
                   <p>{items.overview}</p>

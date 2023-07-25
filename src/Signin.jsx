@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import './CSS Files/Signin.css'
 
-const Signin = () => {
+const Signin = ({ users }) => {
 
     const [error, setError] = useState()
 
@@ -26,13 +26,15 @@ const Signin = () => {
     }
 
     const Nav = () => {
-        if (user.email === 'admin@gmail.com' && user.password === '123') {
-            navigate('/home')
-        } else {
-            setError('Incorrect Information')
-            setTimeout(() => {
-                setError('')
-            }, 1000);
+        if (user.email !== "" && user.password !== '') {
+            if (user.email === users?.email && user.password === users?.password) {
+                navigate('/home')
+            } else {
+                setError('Incorrect Information')
+                setTimeout(() => {
+                    setError('')
+                }, 1000);
+            }
         }
     }
 
@@ -41,13 +43,12 @@ const Signin = () => {
     return (
 
         <div className='form'>
-
             <h1>Sign In</h1>
 
             <form className='log' onSubmit={Submit}>
 
-                <input type='text' placeholder='is: admin@gmail.com' value={user.email} name='email' id='email' onChange={hanleInputs} required />
-                <input type='password' placeholder='is: 123' value={user.password} name='password' id='password' onChange={hanleInputs} required />
+                <input type='text' placeholder='Email address ' value={user.email} name='email' id='email' onChange={hanleInputs} required />
+                <input type='password' placeholder='Password' value={user.password} name='password' id='password' onChange={hanleInputs} required />
                 {error && <span>{error}</span>}
                 <button type='submit' onClick={Nav}>Sign In</button>
 
@@ -56,6 +57,8 @@ const Signin = () => {
                 </div>
 
             </form>
+
+            <button className='glog' onClick={() => navigate('/home')}>Guest Login</button>
 
         </div>
     )

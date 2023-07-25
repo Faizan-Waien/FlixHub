@@ -1,14 +1,17 @@
-import SearchIcon from '@mui/icons-material/Search';
-import AddToQueueIcon from '@mui/icons-material/AddToQueue';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import SearchIcon from '@mui/icons-material/Search'
+import AddToQueueIcon from '@mui/icons-material/AddToQueue'
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 import './Navbar.css'
-import { useState, useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { useSearch } from '../searchContext';
-import { Badge } from '@mui/material';
-import { FavContext } from '../FavContext';
-import Switch from '@mui/material/Switch';
+import { useState, useEffect, useContext } from 'react'
+import { Link } from 'react-router-dom'
+import axios from 'axios'
+import { useSearch } from '../searchContext'
+import { Badge } from '@mui/material'
+import { FavContext } from '../FavContext'
+import Switch from '@mui/material/Switch'
+import logo from '/src/assets/log.png'
+import profileicon from '/src/assets/OIP.jpg'
+import poster from '/src/assets/card.jpg'
 
 const Navbar = () => {
 
@@ -70,7 +73,7 @@ const Navbar = () => {
 
                     <div className='left'>
                         <div className='logodiv'>
-                            <Link to='/home'><img src='/src/assets/log.png' /></Link>
+                            <Link to='/home'><img src={logo} /></Link>
                         </div>
                     </div>
 
@@ -91,7 +94,7 @@ const Navbar = () => {
 
                                         <div className='dd' key={ind} onClick={() => navigate(`movie/${items.id}`)}>
                                             <div className='d2'>
-                                                <img src={items.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items?.poster_path}`} />
+                                                <img src={items.poster_path === null ? poster : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items?.poster_path}`} />
 
                                                 <span>{items?.title || items?.name}</span>
                                             </div>
@@ -107,7 +110,7 @@ const Navbar = () => {
                         <Link to='/Favorites'><Badge color='success' overlap="circular" badgeContent={Total}><AddToQueueIcon className='watchBtn' /></Badge></Link>
 
                         <div className='profile' onClick={() => setFocus2(!focus2)}>
-                            <img src='/src/assets/OIP.jpg' />
+                            <img src={profileicon} />
                             <KeyboardArrowDownIcon style={{ color: 'white', cursor: 'pointer' }} />
                         </div>
 

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import './Navbar.css'
+import logo from '/src/assets/log.png'
 
 const Flixnavbar = () => {
 
@@ -12,7 +13,7 @@ const Flixnavbar = () => {
                 <div className='left'>
 
                     <div className='logodiv'>
-                        <Link to='/'><img src='src/assets/log.png' /></Link>
+                        <Link to='/'><img src={logo} /></Link>
                     </div>
 
                 </div>

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import './CSS Files/Row.css'
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import { useNavigate } from "react-router-dom";
-
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos'
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+import { useNavigate } from "react-router-dom"
+import poster1 from '/src/assets/card.jpg'
+import poster2 from '/src/assets/card2.jpg'
 
 const Row = ({ title, fetchURL, rowID }) => {
 
@@ -41,8 +42,8 @@ const Row = ({ title, fetchURL, rowID }) => {
                 {movies.map((items,ind) => {
                     return (
                         <div className="sub" key={ind} onClick={() => navigate(`/movie/${items.id}`)} >
-                            <img className="poster_img" src={items.poster_path === null ? '/src/assets/card.jpg' : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items.poster_path}`} />
-                            <img className="backdrop_img" src={items.backdrop_path === null ? '/src/assets/card2.jpg' : `https://www.themoviedb.org/t/p/w500/${items.backdrop_path}`} />
+                            <img className="poster_img" src={items.poster_path === null ? poster1 : `https://www.themoviedb.org/t/p/w220_and_h330_face/${items.poster_path}`} />
+                            <img className="backdrop_img" src={items.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${items.backdrop_path}`} />
 
                             <div className="details">
                                 <h5>{items.vote_average}</h5>

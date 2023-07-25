@@ -5,10 +5,6 @@ const Footer = () => {
         <div className="footer">
             <div className="row">
 
-                <div>
-                    <img src="/src/assets/sm.png" style={{ width: '200px', height: '40px' }} />
-                </div>
-
                 <ul>
                     <li><a>Contact us</a></li>
                     <li><a>Our Services</a></li>

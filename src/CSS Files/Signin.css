@@ -39,3 +39,10 @@
     color: gray;
     font-size: large;
 }
+
+.glog{
+    cursor: pointer;
+    background: white;
+    color: black;
+    font-weight: bold;
+}
