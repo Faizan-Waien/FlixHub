@@ -25,7 +25,7 @@ const Search = () => {
 
                                 <div className="detl">
                                     <img className="backdrop" src={items.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${items?.backdrop_path}`} />
-                                    <h5><StarIcon style={{ width: 15 }} />{items.vote_average}</h5>
+                                    <h5><StarIcon style={{ width: 15, color:"goldenrod" }} />{Math.round(items.vote_average * 10) / 10}</h5>
                                     <h3>{items.title || items.name}</h3>
                                     <p>{items.overview}</p>
                                 </div>

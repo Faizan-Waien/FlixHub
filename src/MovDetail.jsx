@@ -4,7 +4,6 @@ import { useEffect, useState } from "react"
 import StarIcon from '@mui/icons-material/Star';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import { ArrowLeft } from "@mui/icons-material";
 import AddToQueueIcon from '@mui/icons-material/AddToQueue';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
@@ -60,14 +59,14 @@ function MovDetail() {
     slide.scrollLeft = slide.scrollLeft + 500
   }
 
-  if (detail) {
+  if (detail && info) {
     return (
       <div className="parent">
-          
-          <h1>{info.title}</h1>
+
+        <h1>{info.title}</h1>
 
         <h3 style={{ marginLeft: 60 }}>{selectedSource?.name || ""}</h3>
-       
+
         <div className="vid">
           {
             selectedSource?.key ?
@@ -107,16 +106,20 @@ function MovDetail() {
 
               <div className="movInfo">
 
-                <span style={{ border: '1px solid white', color: "white", margin: 5, padding: '5px' }}>HD</span>
-                <span style={{ border: '1px solid white', padding: '5px', alignItems: 'center', display: "flex", gap: 5 }}><StarIcon style={{ color: 'gold' }} />{info.vote_average}</span>
-                <span style={{border: '1px solid white', padding: '5px',whiteSpace: 'nowrap', margin: 5}}>{info.runtime} min</span>
+                <span>HD</span>
+
+                <span><StarIcon style={{ color: 'goldenrod' }} />{Math.round(info.vote_average * 10) / 10}</span>
+
+                <span>{info.runtime} min</span>
 
                 <AddToQueueIcon className="watchBtn" onClick={Click2} style={add ? { color: 'green' } : {}} />
+
                 <div style={{ alignItems: 'center', display: "flex", gap: 5, cursor: "pointer", margin: 5 }}>
                   <ThumbUpIcon onClick={Click} style={like ? { color: "white" } : { color: "green" }} />
 
                   <ThumbDownIcon onClick={Click} style={!like ? { color: "white" } : { color: 'red' }} />
                 </div>
+
               </div>
 
               <br />
@@ -124,7 +127,7 @@ function MovDetail() {
               <div>
                 {info?.genres?.map((data, idx) => {
                   return (
-                  <span key={idx} style={{ display:"inline-flex",background: '#312d2d', color: "white", border: '1px solid white', padding: '5px',margin:'5px' }}>{data.name}</span>
+                    <span key={idx} style={{ display: "inline-flex", background: '#312d2d', color: "white", border: '1px solid gray', padding: '5px', margin: '5px' }}>{data.name}</span>
                   )
                 }) || null}
               </div><br />
@@ -171,9 +174,9 @@ function MovDetail() {
             <h2>You May Also Like</h2>
 
             <div className="ss">
-              {similar.slice(0,4).map((s, ind) => {
+              {similar.slice(0, 4).map((s, ind) => {
                 return (
-                  <div className="child" style={{margin: '10px 5px'}} key={ind}>
+                  <div className="child" style={{ margin: '10px 5px' }} key={ind}>
 
                     <div className="sub2" onClick={() => navigate(`/movie/${s.id}`)}>
 
@@ -181,7 +184,7 @@ function MovDetail() {
 
                       <div className="detl">
                         <img className="backdrop" style={{ width: 220 }} src={s.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${s?.backdrop_path}`} />
-                        <h5><StarIcon style={{ width: 15 }} />{s.vote_average}</h5>
+                        <h5><StarIcon style={{ color: 'goldenrod', width: 15 }} />{Math.round(s.vote_average * 10) / 10}</h5>
                         <h3>{s.title || s.name}</h3>
                         <p>{s.overview.substring(0, 250) + " ..... Read More"}</p>
                       </div>

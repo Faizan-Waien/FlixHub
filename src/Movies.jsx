@@ -7,7 +7,7 @@ import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import KeyboardDoubleArrowLeftIcon from '@mui/icons-material/KeyboardDoubleArrowLeft';
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
-import { Chip } from "@mui/material";
+import { Chip, Pagination, Stack } from "@mui/material";
 import useGenre from "./useGenre";
 import poster1 from '/src/assets/card.jpg'
 import poster2 from '/src/assets/card2.jpg'
@@ -79,6 +79,10 @@ const Movies = () => {
         })
     }, [])
 
+    const handleChange = (event, value) => {
+        setPage(value);
+      };
+    
     const Next = () => {
         if (page < 500)
             setPage(page + 1)
@@ -154,9 +158,9 @@ const Movies = () => {
 
                                 <div className="detl">
                                     <img className="backdrop" src={item.backdrop_path === null ? poster2 : `https://www.themoviedb.org/t/p/w500/${item?.backdrop_path}`} />
-                                    <h5><StarIcon style={{ width: 15 }} />{item.vote_average}</h5>
+                                    <h5><StarIcon style={{ width: 15,color:"goldenrod" }} />{Math.round(item.vote_average * 10)/10}</h5>
                                     <h3>{item.title || item.name}</h3>
-                                    <p>{item.overview.substring(0, 250)+ " ..... Read More"}</p>
+                                    <p>{item.overview.substring(0, 250) + " ..... Read More"}</p>
                                 </div>
                             </div>
                         </div>
@@ -164,7 +168,7 @@ const Movies = () => {
                 })}
             </div>
             {/* -------------------------------------*/}
-            <div className="counter">
+            {/* <div className="counter">
                 <button className="c-btn" onClick={() => setPage(1)}> <KeyboardDoubleArrowLeftIcon /> </button>
                 <button className="c-btn" onClick={Back}> <KeyboardArrowLeftIcon /> </button>
 
@@ -174,7 +178,16 @@ const Movies = () => {
 
                 <button className="c-btn" onClick={Next}> <KeyboardArrowRightIcon />  </button>
                 <button className="c-btn" onClick={() => setPage(500)}> <KeyboardDoubleArrowRightIcon /> </button>
+            </div> */}
+
+            <div style={{margin:'auto', marginTop:'50px'}}>
+                <Stack spacing={2}>
+                    <Pagination count={500} page={page} onChange={handleChange} 
+                    variant="outlined" size="large" shape="rounded" 
+                    showFirstButton showLastButton/>
+                </Stack>
             </div>
+
         </div>
     )
 }
