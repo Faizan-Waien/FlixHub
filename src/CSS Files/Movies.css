@@ -43,7 +43,8 @@
     height: fit-content;
     min-height: 500px;
     width: 100%;
-    padding: 20px;
+    padding: 20px 0px;
+    justify-content: center;
 }
 
 .child {
@@ -257,4 +258,11 @@
 
 .MuiPaginationItem-root.Mui-selected {
     background: darkred !important;
+}
+
+@media screen and (max-width: 700px) {
+
+    .child {
+        margin: 5px 5px;
+    }
 }

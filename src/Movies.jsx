@@ -183,7 +183,7 @@ const Movies = () => {
             <div style={{margin:'auto', marginTop:'50px'}}>
                 <Stack spacing={2}>
                     <Pagination count={500} page={page} onChange={handleChange} 
-                    variant="outlined" size="large" shape="rounded" 
+                    variant="outlined" size="medium" shape="rounded" 
                     showFirstButton showLastButton/>
                 </Stack>
             </div>

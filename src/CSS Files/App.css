@@ -6,7 +6,8 @@
 } */
 
 .lightTheme{
-  background: rgb(218, 210, 195);
+  /* background: rgb(218, 210, 195); */
+  background: gainsboro;
   color: black;
 }
 
